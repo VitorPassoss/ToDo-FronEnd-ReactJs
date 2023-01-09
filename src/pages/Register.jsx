@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import FailedComponent from '../components/FailedComponent';
+import LoadingComponent from '../components/LoadingComponent';
 
 
 const Register = () => {
@@ -13,7 +14,7 @@ const Register = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
+    setUseStatus("loading")
     const User = {
       "name":useUsername,
       "email":useEmail,
@@ -23,10 +24,11 @@ const Register = () => {
     axios.post(url, User)
     .then((response) => {
         setUseStatus(true)
+        console.log(response)
         window.location.href = 'http://localhost:5173/login';
 
     })
-    .catch(err => setUseStatus("falha no envio") )
+    .catch(err => setUseStatus("falha no envio" + err) )
   }
   
   return (
@@ -119,6 +121,8 @@ const Register = () => {
           </form>
         </div>
         { useStatus == "falha no envio" ? <FailedComponent status={useStatus}></FailedComponent>: null}
+        { useStatus == "loading" ?  <LoadingComponent ></LoadingComponent> : null}
+
      </div>
     
    
