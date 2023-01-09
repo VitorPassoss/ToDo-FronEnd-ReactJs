@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from "axios";
 import { useState , useEffect} from "react";
+import TasksComponent from '../components/TasksComponent';
 
 const Home = () => {
   let data =  localStorage.getItem("dataUser")
@@ -31,9 +32,7 @@ const Home = () => {
          <ul>
                 {
                   UseTasks.map((task)=>(
-                    <li key={task._id}>
-                       {task.title} -{task.task}
-                    </li>
+                    <TasksComponent key={task._id} title={task.title} task={task.task} state={task.state}/>
                   ))
                 }
             </ul>
