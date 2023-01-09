@@ -2,6 +2,7 @@ import React from 'react'
 import axios from "axios";
 import { useState , useEffect} from "react";
 import TasksComponent from '../components/TasksComponent';
+import ProfileComponent from '../components/ProfileComponent';
 
 const Home = () => {
   let data =  localStorage.getItem("dataUser")
@@ -28,14 +29,31 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-         <ul>
+    <div className='w-full'> 
+        <ProfileComponent name={Username} email={Email}></ProfileComponent>
+        
+        <div className='flex flex-col items-center '>
+            <div className='w-[40%] h-[100%]'>
+              
+              <div className='p-4 mt-[10%] bg-[#28272b] rounded-lg '>
+
+              <div className='flex row justify-between p-2'>
+         
+
+            
+        </div>
+                
                 {
-                  UseTasks.map((task)=>(
-                    <TasksComponent key={task._id} title={task.title} task={task.task} state={task.state}/>
-                  ))
-                }
-            </ul>
+                    UseTasks.map((task)=>(
+                       <TasksComponent key={task._id} title={task.title} task={task.task} state={task.state}/>
+                     ))
+                    }
+              </div>
+               
+            </div>
+      
+        </div>
+          
     </div>
   )
 }
