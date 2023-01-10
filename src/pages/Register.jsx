@@ -10,7 +10,7 @@ const Register = () => {
   const [usePassword, setPassword] = useState("")
   const [useStatus, setUseStatus] = useState(null)
 
-  const url = "http://localhost:3000/cadastro"
+  const url = "https://todobackend-3mba.onrender.com/cadastro"
   
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -25,7 +25,7 @@ const Register = () => {
     .then((response) => {
         setUseStatus(true)
         console.log(response)
-        window.location.href = 'http://localhost:5173/login';
+        window.location.href = 'https://to-do-fron-end-react-11uzw7gjm-vitorpassoss.vercel.app/login';
 
     })
     .catch(err => setUseStatus("falha no envio" + err) )
