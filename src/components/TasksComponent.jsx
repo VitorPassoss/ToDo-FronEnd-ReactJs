@@ -3,7 +3,7 @@ import axios from "axios";
 import FormTodoComponent from '../components/FormTodoComponent';
 
 const TasksComponent = ({idtask,userId,title,task,state}) => {
-  const url = `http://localhost:3000/delete/${userId}`
+  const url = `https://todobackend-hp2z.onrender.com/delete/${userId}`
   const [useEdit, setEdit] = useState(false)
   const [UseVisible,setUseVisible] = useState(false)
   const [stat, setStat] = useState(null)
