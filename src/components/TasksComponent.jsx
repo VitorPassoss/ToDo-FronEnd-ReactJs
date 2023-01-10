@@ -11,7 +11,7 @@ const TasksComponent = ({idtask,userId,title,task,state}) => {
   const DeleteTask = async () => {
       await axios.get(url)
       .then((response) => {
-          window.location.href = 'http://localhost:5173/';
+          window.location.href = 'https://sunny-gumption-af626f.netlify.app/login';
         })
       .catch(err => console.log(err) )
   }
