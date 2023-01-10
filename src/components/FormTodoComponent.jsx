@@ -24,7 +24,7 @@ const FormTodoComponent = ({idtask, visible, UserId , title , task , state , edi
         return axios.post(urlUp, TaskUpdate)
         .then((response) => {
             console.log(response)
-            window.location.href = 'http://localhost:5173/';
+            window.location.href = 'https://sunny-gumption-af626f.netlify.app/';
           })
         .catch(err => console.log(err) )
     }
@@ -38,7 +38,7 @@ const FormTodoComponent = ({idtask, visible, UserId , title , task , state , edi
   
       return axios.post(url, Task)
       .then((response) => {
-          window.location.href = 'http://localhost:5173/';
+          window.location.href = 'https://sunny-gumption-af626f.netlify.app/';
   
   
         })
