@@ -3,7 +3,7 @@ import axios from "axios";
 import FormTodoComponent from '../components/FormTodoComponent';
 
 const TasksComponent = ({idtask,userId,title,task,state}) => {
-  const url = `https://todobackend-hp2z.onrender.com/delete/${userId}`
+  const url = `https://todobackend-3mba.onrender.com/delete/${userId}`
   const [useEdit, setEdit] = useState(false)
   const [UseVisible,setUseVisible] = useState(false)
   const [stat, setStat] = useState(null)
@@ -11,7 +11,7 @@ const TasksComponent = ({idtask,userId,title,task,state}) => {
   const DeleteTask = async () => {
       await axios.get(url)
       .then((response) => {
-          window.location.href = 'https://sunny-gumption-af626f.netlify.app/login';
+          window.location.href = 'https://to-do-fron-end-react-11uzw7gjm-vitorpassoss.vercel.app/';
         })
       .catch(err => console.log(err) )
   }
