@@ -3,6 +3,7 @@ import axios from "axios";
 import FailedComponent from '../components/FailedComponent';
 import LoadingComponent from '../components/LoadingComponent';
 import {Navigate, Outlet} from 'react-router-dom'
+const [navigate, setnavigate] = useState(false)
 
 
 const Register = () => {
@@ -10,6 +11,7 @@ const Register = () => {
   const [useEmail, setEmail] = useState("")
   const [usePassword, setPassword] = useState("")
   const [useStatus, setUseStatus] = useState(null)
+  const [navigate, setnavigate] = useState(false)
 
   const url = "https://todobackend-3mba.onrender.com/cadastro"
   
@@ -26,7 +28,7 @@ const Register = () => {
     .then((response) => {
         setUseStatus(true)
         console.log(response)
-        return <Navigate to="/login"/>
+        setnavigate(true)
 
     })
     .catch(err => setUseStatus("falha no envio" + err) )
@@ -123,7 +125,7 @@ const Register = () => {
         </div>
         { useStatus == "falha no envio" ? <FailedComponent status={useStatus}></FailedComponent>: null}
         { useStatus == "loading" ?  <LoadingComponent ></LoadingComponent> : null}
-
+        { navigate == true ? <Navigate to="/login"/> : null }
      </div>
     
    
