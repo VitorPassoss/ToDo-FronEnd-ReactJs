@@ -38,9 +38,9 @@ const FormTodoComponent = ({idtask, visible, UserId , title , task , state , edi
   
       return axios.post(url, Task)
       .then((response) => {
-          window.location.href = 'https://to-do-fron-end-react-11uzw7gjm-vitorpassoss.vercel.app/';
-  
-  
+          console.log(response)
+          return <Navigate to="/"/>
+
         })
       .catch(err => console.log(err) )
       
