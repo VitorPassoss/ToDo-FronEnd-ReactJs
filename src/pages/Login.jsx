@@ -32,6 +32,10 @@ const Login = () => {
         .catch(err => setUseStatus("falha no envio") )
       }
 
+      if(navigate == true){
+        return  <Navigate to="/"/>
+      }else{
+
         return (
             <div className='flex flex-col items-center '>
                 <div>
@@ -98,12 +102,11 @@ const Login = () => {
                 </div>
                 { useStatus == "falha no envio" ? <FailedComponent status={useStatus}></FailedComponent>: null}
                 { useStatus == "loading" ?  <LoadingComponent ></LoadingComponent> : null}
-                { navigate == true ? <Navigate to="/"/> : null }
             </div>
           )
     
 
-   
+        }
   
 }
 

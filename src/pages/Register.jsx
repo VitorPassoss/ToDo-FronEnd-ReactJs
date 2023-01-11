@@ -3,7 +3,6 @@ import axios from "axios";
 import FailedComponent from '../components/FailedComponent';
 import LoadingComponent from '../components/LoadingComponent';
 import {Navigate, Outlet} from 'react-router-dom'
-const [navigate, setnavigate] = useState(false)
 
 
 const Register = () => {
@@ -33,7 +32,11 @@ const Register = () => {
     })
     .catch(err => setUseStatus("falha no envio" + err) )
   }
-  
+
+  if(navigate == true){
+    return  <Navigate to="/login"/>
+  }
+  else {
   return (
     <div className='flex flex-col items-center '>
         <div>
@@ -125,12 +128,11 @@ const Register = () => {
         </div>
         { useStatus == "falha no envio" ? <FailedComponent status={useStatus}></FailedComponent>: null}
         { useStatus == "loading" ?  <LoadingComponent ></LoadingComponent> : null}
-        { navigate == true ? <Navigate to="/login"/> : null }
      </div>
     
    
   )
- 
+  }
 }
 
 export default Register

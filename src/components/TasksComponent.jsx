@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import FormTodoComponent from '../components/FormTodoComponent';
-import {Navigate, Outlet} from 'react-router-dom'
 
 const TasksComponent = ({idtask,userId,title,task,state}) => {
   const url = `https://todobackend-3mba.onrender.com/delete/${userId}`
   const [useEdit, setEdit] = useState(false)
   const [UseVisible,setUseVisible] = useState(false)
-  const [stat, setStat] = useState(null)
 
   const DeleteTask = async () => {
       await axios.get(url)
       .then((response) => {
-          return <Navigate to="/"/>
+          window.location.reload()
         })
       .catch(err => console.log(err) )
   }

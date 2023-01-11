@@ -39,8 +39,7 @@ const FormTodoComponent = ({idtask, visible, UserId , title , task , state , edi
       return axios.post(url, Task)
       .then((response) => {
           console.log(response)
-          return <Navigate to="/"/>
-
+          window.location.reload()
         })
       .catch(err => console.log(err) )
       
