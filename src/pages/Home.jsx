@@ -33,7 +33,7 @@ const Home = () => {
     <div className='w-full'> 
         <ProfileComponent name={Username} email={Email}></ProfileComponent>
         <div className='flex flex-col items-center '>
-            <div className='w-[40%] h-[100%]'>
+            <div className='w-[100%] sm:w-[80%] md:w-[50%] lg:w-[45%] xl:w-[35%] h-[100%]'>
               <div className='p-4 mt-[10%]  rounded-lg '>
                 <div className='flex row justify-center p-2'>
           
@@ -53,8 +53,8 @@ const Home = () => {
               </div> 
             </div>
 
-            <div className='w-[60%] bg-[#28272b] p-6 rounded-lg'>
-                  <div className='grid grid-cols-3 gap-4'>
+            <div className='w-[90%] sm:w-[80%] md:w-[75%] lg:w-[60%] xl:w-[60%]  bg-[#28272b] p-6 rounded-lg'>
+                  <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
                       { 
                         UseTasks.map((task)=>(
                               <TasksComponent key={task._id}  idtask={task._id} userId={UserId} title={task.title} task={task.task} state={task.state}/>

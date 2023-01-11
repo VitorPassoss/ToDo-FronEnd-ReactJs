@@ -41,7 +41,7 @@ const Login = () => {
                 <div>
                     <h1 className='text-white pt-[45%] text-[30px]'>Tenha um To-do list <span className='text-[#6134CB]'>apenas seu!</span> </h1>
                 </div>
-                <div  className='w-[25%] mt-[2%]'>
+                <div  className='w-[70%]  sm:w-[55%] md:w-[45%] lg:w-[35%] mt-[2%]'>
                 <form onSubmit={handleSubmit} className="flex flex-col items-center ">
                     
                     <label htmlFor='email' className="w-full text-white form-label inline-block mb-4">

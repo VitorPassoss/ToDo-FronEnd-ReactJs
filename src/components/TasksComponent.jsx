@@ -37,7 +37,7 @@ const TasksComponent = ({idtask,userId,title,task,state}) => {
 
         </div>
         <div className=' p-2'>
-          <p className='text-white text-center break-all  whitespace-normal p-6'>{task}</p>
+          <p className='text-white text-center break-all  whitespace-normal p-4'>{task}</p>
           <div className='flex row justify-end'>
             <button onClick={DeleteTask}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
