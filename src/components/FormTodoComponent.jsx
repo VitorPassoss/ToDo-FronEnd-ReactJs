@@ -5,8 +5,8 @@ const FormTodoComponent = ({idtask, visible, UserId , title , task , state , edi
   const [useTitle, setTitle] = useState(title)
   const [useTask, setUseTask] = useState(task)
   const [useStatus, setUseState] = useState(state)
-  const url = "https://todobackend-hp2z.onrender.com/todoadd"
-  const urlUp = `https://todobackend-hp2z.onrender.com/update/`
+  const url = "https://todobackend-3mba.onrender.com/todoadd"
+  const urlUp = `https://todobackend-3mba.onrender.com/update/`
 
 
   const handleSubmit = async (e) => {
