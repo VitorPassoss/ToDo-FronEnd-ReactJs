@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 import FailedComponent from '../components/FailedComponent';
 import LoadingComponent from '../components/LoadingComponent';
+import {Navigate, Outlet} from 'react-router-dom'
 
 
 
@@ -9,6 +10,7 @@ const Login = () => {
     const [useEmail, setEmail] = useState("")
     const [usePassword, setPassword] = useState("")
     const [useStatus, setUseStatus] = useState(null)
+    const [navigate, setnavigate] = useState(false)
 
     const url = "https://todobackend-3mba.onrender.com/login"
 
@@ -25,7 +27,7 @@ const Login = () => {
             console.log(response)
             localStorage.setItem("tokenUser", response.data.tokenUser);
             localStorage.setItem("dataUser",JSON.stringify(response.data.dataUser[0]))
-            return <Navigate to="/"/>
+            setnavigate(true)
           })
         .catch(err => setUseStatus("falha no envio") )
       }
@@ -96,8 +98,7 @@ const Login = () => {
                 </div>
                 { useStatus == "falha no envio" ? <FailedComponent status={useStatus}></FailedComponent>: null}
                 { useStatus == "loading" ?  <LoadingComponent ></LoadingComponent> : null}
-                
-
+                { navigate == true ? <Navigate to="/"/> : null }
             </div>
           )
     
