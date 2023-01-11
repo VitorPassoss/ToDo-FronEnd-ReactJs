@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 import FailedComponent from '../components/FailedComponent';
 import LoadingComponent from '../components/LoadingComponent';
+import {Navigate, Outlet} from 'react-router-dom'
 
 
 const Register = () => {
@@ -25,7 +26,7 @@ const Register = () => {
     .then((response) => {
         setUseStatus(true)
         console.log(response)
-        window.location.href = 'https://to-do-fron-end-react-11uzw7gjm-vitorpassoss.vercel.app/login';
+        return <Navigate to="/"/>
 
     })
     .catch(err => setUseStatus("falha no envio" + err) )

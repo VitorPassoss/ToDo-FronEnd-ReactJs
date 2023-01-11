@@ -12,7 +12,7 @@ const TasksComponent = ({idtask,userId,title,task,state}) => {
   const DeleteTask = async () => {
       await axios.get(url)
       .then((response) => {
-          window.location.href = 'https://to-do-fron-end-react-11uzw7gjm-vitorpassoss.vercel.app/';
+          return <Navigate to="/"/>
         })
       .catch(err => console.log(err) )
   }

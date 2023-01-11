@@ -25,7 +25,7 @@ const Login = () => {
             console.log(response)
             localStorage.setItem("tokenUser", response.data.tokenUser);
             localStorage.setItem("dataUser",JSON.stringify(response.data.dataUser[0]))
-            window.location.href = 'https://to-do-fron-end-react-11uzw7gjm-vitorpassoss.vercel.app/';
+            return <Navigate to="/"/>
           })
         .catch(err => setUseStatus("falha no envio") )
       }
