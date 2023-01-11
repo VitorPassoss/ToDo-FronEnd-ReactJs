@@ -26,7 +26,7 @@ const Register = () => {
     .then((response) => {
         setUseStatus(true)
         console.log(response)
-        return <Navigate to="/"/>
+        return <Navigate to="/login"/>
 
     })
     .catch(err => setUseStatus("falha no envio" + err) )
